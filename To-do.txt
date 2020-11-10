@@ -1,0 +1,80 @@
+1. Character
+• 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. 
+• Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. 
+• Karakter pemain dapat naik level 
+    - Saat mencapai experience yang sudah ditentukan. 
+    - Status attack, defense, dan max HP akan meningkat. 
+    - Sistem level up dibebaskan berapa exp yang dibutuhkan dan berapa growth rate statusnya.
+• Karakter hanya dapat memakai equipment sesuai dengan job yang mereka pilih. 
+
+2. Map
+• Min 10x10, ditampilkan dengan command         ===DONE===
+• Posisi:  
+    - Pemain: P
+    - Pagar: #
+    - Lokasi Store: S
+    - Lokasi Boss Akhir (Dungeon Boss): D,
+    - Lokasi pengambilan Quest: Q
+
+3. Inventory
+• Menyimpan hasil dari gacha dan potion sebanyak 100 items saja. 
+• Pemain dapat memakai atau membuang barang yang terdapat di inventory.
+
+4. Items
+• Terdiri dari equipment dan potion. 
+• Equipment berupa senjata, armor, dan accessory yang memiliki restriksi job tertentu yang dapat memakainya.
+
+5. Enemy 
+• Musuh minimal terdiri dari 3 jenis, yaitu slime, goblin, dan wolf. 
+• Tiap musuh memiliki status level, HP, Attack, dan Defense sendiri. Sistem status musuh yang muncul dibebaskan.
+• Terdapat juga boss musuh yang harus dikalahkan untuk memenangkan game. 
+    - Boss tersebut berada di boss dungeon yang terletak di suatu tiles di map. 
+    - Boss memiliki status yang sama sepanjang permainan (semisal level 70, attack 1000, dan defense 1000).
+
+6. Quest
+• Quest merupakan misi yang harus diselesaikan oleh pemain, dan diambil dari tempat pengambilan Quest. 
+• Sebuah quest terdiri atas sebuah tripel bilangan (x,y,z) : harus mengalahkan x buah slime, y buah goblin, dan z buah wolf. 
+• Apabila menyelesaikan sebuah quest, pemain menerima reward berupa tambahan EXP serta sejumlah gold. 
+• Dalam satu waktu, tidak boleh terdapat dua quest yang aktif, yang berarti pemain harus menyelesaikan sebuah quest terlebih dahulu sebelum dapat menerima quest yang baru. 
+• Implementasi penentuan quest serta rewardnya dibebaskan, dan harus dijelaskan pada laporan.
+
+7. Exploration Mechanism
+• Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. 
+• Dapat melakukan gacha dan membeli potion di store
+• Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact
+• Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. 
+• Pada saat berada di field
+    - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory 
+    - Dapat melihat status pemain saat berada pada field.
+• Pada saat berpindah
+    - Pemain memiliki peluang khusus untuk bertemu dengan enemy. 
+    - Ketika bertemu musuh, ditampilkan jenis enemy, serta status dari enemy tersebut. 
+    - Setelah itu pemain akan memasuki Battle Mechanism (Selengkapnya baca section Battle Mechanism).
+
+8. Battle Mechanism
+• Setelah bertemu dengan musuh, pemain akan memasuki tampilan bertarung. 
+• Pada tampilan ini, pemain dapat melakukan attack, special attack, use potions, atau run. 
+• Saat melakukan attack dan special attack, 
+    - Pemain akan mengurangi HP musuh. 
+    - Special attack dapat digunakan setiap 3 turn sekali. 
+• Use potions akan memakai potion yang terdapat pada inventory. 
+• Jika tidak terdapat potion, akan mengulang turn untuk melakukan attack, special attack, atau run. Saat melakukan run, terdapat kemungkinan run gagal, kemudian turn berpindah ke musuh.
+• Saat turn musuh, musuh dapat melakukan special attack atau attack. Sistem turn musuh dibebaskan implementasinya.
+
+9. Store
+• Pemain dapat mendapatkan equipment di Store dengan menggunakan gold, namun equipment ini didapatkan dengan sistem gacha/lootbox. 
+• Pada sistem ini, pemain mengeluarkan gold dalam jumlah tertentu yang kemudian dapat meng-generate equipment tertentu yang acak. 
+• Potion dapat dibeli secara langsung di Store tanpa perlu menggunakan sistem gacha.
+
+10. Fail State
+• Pemain dinyatakan kalah apabila HP pemain menyentuh angka 0. 
+
+11. Goal State
+• Pemain dinyatakan menang apabila telah berhasil mengalahkan Boss Akhir (Naga) pada Boss Dungeon.
+
+12. Bonus
+• Fungsionalitas tambahan berupa potion untuk menambahkan efek seperti serangan dan defense tanpa mengurangi spek wajib.
+• Membuat sistem zona kemunculan monster (zona 1 slime, zona 2 wolf, dll).
+• Terdapat sistem teleport untuk pergi ke titik tertentu.
+• Mengimplementasikan fungsionalitas save dan load untuk menyimpan state permainan saat ini dan memainkannya lain waktu.
+• Kreativitas tambahan dalam implementasi game (contoh: alur cerita, animasi dalam battle mechanism)

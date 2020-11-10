@@ -1,18 +1,32 @@
 /* Map */
 /* Berisi fungsi untuk mengoutput map dan objek didalamnya */
+/* Penerapan: Rekurens */
 
 % ==================== MAIN  ====================
 map :-
+    started_game(true), !,
     print_map.
+
+map :-
+    !,
+    write('Please start the game. Type \"start.\"').
 
 print_map :-
     printXY(0,0).
 
-% ==================== OBJECT  ====================
+% ==================== OBJECT ====================
 :- dynamic(object/3).
 
 % object(X, Y, O) berarti ada sebuah objek O, bisa berupa player atau lokasi, dengan koordinat X, Y
-object(1, 3, 'P').
+% Wall
+object(3, 6, '#').
+object(3, 7, '#').
+object(2, 6, '#').
+object(9, 7, '#').
+object(8, 6, '#').
+object(8, 7, '#').
+object(8, 8, '#').
+object(8, 9, '#').
 
 % Ukuran dari map
 size(10,10).
