@@ -4,12 +4,12 @@
 
 % ==================== MAIN  ====================
 map :-
-    started_game(true), !,
+    start_flag(true), !,
     print_map.
 
 map :-
     !,
-    write('Please start the game. Type \"start.\"').
+    write('Please start the game. Type \'start.\'').
 
 print_map :-
     printXY(0,0).
@@ -29,12 +29,12 @@ object(8, 8, '#').
 object(8, 9, '#').
 
 % Ukuran dari map
-size(10,10).
+map_size(10,10).
 
 % ==================== PAGAR ====================
 % Batas atas
 printXY(X, Y) :-
-    size(W, _),
+    map_size(W, _),
     X > 0,
     X < W+1,
     Y =:= 0,
@@ -44,7 +44,7 @@ printXY(X, Y) :-
 
 % Batas bawah
 printXY(X, Y) :-
-    size(W, H),
+    map_size(W, H),
     X > 0,
     X < W+1,
     Y =:= H+1,
@@ -54,7 +54,7 @@ printXY(X, Y) :-
 
 % Batas kanan
 printXY(X, Y) :-
-    size(W, H),
+    map_size(W, H),
     X =:= W + 1,
     Y =< H + 1,
     write('# '),
@@ -64,7 +64,7 @@ printXY(X, Y) :-
 
 % Batas kiri
 printXY(X, Y) :-
-    size(_, H),
+    map_size(_, H),
     X =:= 0,
     Y =< H + 1,
     write('# '),
@@ -74,7 +74,7 @@ printXY(X, Y) :-
 % ==================== Object ====================
 % Object
 printXY(X, Y) :-
-    size(W, H),
+    map_size(W, H),
     X > 0,
     Y > 0,
     X < W+1,
@@ -86,7 +86,7 @@ printXY(X, Y) :-
     printXY(X2, Y).
 
 printXY(X, Y) :-
-    size(W, H),
+    map_size(W, H),
     X > 0,
     Y > 0,
     X < W+1,
@@ -100,7 +100,7 @@ printXY(X, Y) :-
 % ==================== Space kosong ====================
 % Empty space
 printXY(X, Y) :-
-    size(W, H),
+    map_size(W, H),
     X > 0,
     Y > 0,
     X < W+1,

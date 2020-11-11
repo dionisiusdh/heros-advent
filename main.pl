@@ -4,14 +4,18 @@
 % Modules
 :- include('map.pl').
 :- include('help.pl').
+:- include('character.pl').
+:- include('move.pl').
 
-% Initiate start game status
-:- dynamic(started_game/1).
-started_game(false).             % Untuk debug, set jadi true
+% Initiate start flag
+:- dynamic(start_flag/1).
+start_flag(false).             % Untuk debug, set jadi true
 
 start :-
     ['map.pl'],
     ['help.pl'],
+    ['character.pl'],
+    ['move.pl'],
     
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                                   Game                                       %'),nl,
@@ -26,17 +30,33 @@ start :-
     write('% 9. help   : menampilkan segala bantuan                                       %'),nl,
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
 
-    retract(started_game(false)), 
+    retract(start_flag(false)), 
     !,
-    asserta(started_game(true)),
+    asserta(start_flag(true)),
 
     write('Welcome to blabla. Choose your job'),nl,
     write('1. Swordsman'),nl,
     write('2. Archer'),nl,
     write('3. Sorcerer'),nl,
     read(Job),
-    (Job = 1 -> write('You choose swordsman, lets explore the world');
-    (Job = 2 -> write('You choose archer, lets explore the world'))),
+
+    % Getting character stats
+    job_stat(Job, Name),
+    attack_stat(Job, Attack),
+    specialattack_stat(Job, SpecialAttack),
+    health_stat(Job, Health),
+    defense_stat(Job, Defense),
+
+    % Initiate character stats
+    assertz(cjob(Name)),
+    assertz(cattack(Attack)),
+    assertz(cspecialattack(SpecialAttack)),
+    assertz(chealth(Health)),
+    assertz(cdefense(Defense)),
+
+    write('You choose '),
+    write(Name),
+    write(', lets explore the world'),
 
     % Initiate map objects
     assertz(object(5, 5, 'P')),

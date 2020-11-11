@@ -1,5 +1,5 @@
-1. Character
-• 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. 
+﻿1. Character
+• 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. ===DONE===
 • Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. 
 • Karakter pemain dapat naik level 
     - Saat mencapai experience yang sudah ditentukan. 
@@ -8,13 +8,13 @@
 • Karakter hanya dapat memakai equipment sesuai dengan job yang mereka pilih. 
 
 2. Map
-• Min 10x10, ditampilkan dengan command         ===DONE===
+• Min 10x10, ditampilkan dengan command ===DONE===
 • Posisi:  
-    - Pemain: P
-    - Pagar: #
-    - Lokasi Store: S
-    - Lokasi Boss Akhir (Dungeon Boss): D,
-    - Lokasi pengambilan Quest: Q
+    - Pemain: P	===DONE===
+    - Pagar: #	===DONE===
+    - Lokasi Store: S ===DONE===
+    - Lokasi Boss Akhir (Dungeon Boss): D ===DONE===
+    - Lokasi pengambilan Quest: Q ===DONE===
 
 3. Inventory
 • Menyimpan hasil dari gacha dan potion sebanyak 100 items saja. 
@@ -39,7 +39,7 @@
 • Implementasi penentuan quest serta rewardnya dibebaskan, dan harus dijelaskan pada laporan.
 
 7. Exploration Mechanism
-• Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. 
+• Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. ===DONE===
 • Dapat melakukan gacha dan membeli potion di store
 • Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact
 • Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. 
