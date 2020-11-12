@@ -7,6 +7,9 @@
 :- dynamic(cspecialattack/1).
 :- dynamic(chealth/1).
 :- dynamic(cdefense/1).
+:- dynamic(cmoney/1).
+:- dynamic(cweapon/1).
+:- dynamic(carmor/1).
 
 % Job
 job_stat(1, 'Swordsman').

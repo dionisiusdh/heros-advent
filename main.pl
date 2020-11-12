@@ -6,6 +6,9 @@
 :- include('help.pl').
 :- include('character.pl').
 :- include('move.pl').
+:- include('store.pl').
+:- include('inventory.pl').
+:- include('items.pl').
 
 % Initiate start flag
 :- dynamic(start_flag/1).
@@ -16,18 +19,21 @@ start :-
     ['help.pl'],
     ['character.pl'],
     ['move.pl'],
+    ['store.pl'],
+    ['inventory.pl'],
+    ['items.pl'],
     
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                                   Game                                       %'),nl,
-    write('% 1. start  : untuk memulai petualanganmu                                      %'),nl,
-    write('% 2. map    : menampilkan peta                                                 %'),nl,
-    write('% 3. status : menampilkan kondisimu terkini                                    %'),nl,
-    write('% 4. w      : gerak ke utara 1 langkah                                         %'),nl,
-    write('% 5. s      : gerak ke selatan 1 langkah                                       %'),nl,
-    write('% 6. d      : gerak ke ke timur 1 langkah                                      %'),nl,
-    write('% 7. a      : gerak ke barat 1 langkah                                         %'),nl,
-    write('% 8. Status : menampilkan status pemain                                        %'),nl,
-    write('% 9. help   : menampilkan segala bantuan                                       %'),nl,
+    write('% 1. start       : untuk memulai petualanganmu                                 %'),nl,
+    write('% 2. map         : menampilkan peta                                            %'),nl,
+    write('% 3. status      : menampilkan kondisimu terkini                               %'),nl,
+    write('% 4. w           : gerak ke utara 1 langkah                                    %'),nl,
+    write('% 5. s           : gerak ke selatan 1 langkah                                  %'),nl,
+    write('% 6. d           : gerak ke ke timur 1 langkah                                 %'),nl,
+    write('% 7. a           : gerak ke barat 1 langkah                                    %'),nl,
+    write('% 8. inventory   : menampilkan inventory anda                                  %'),nl,
+    write('% 9. help        : menampilkan segala bantuan                                  %'),nl,
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
 
     retract(start_flag(false)), 
@@ -53,6 +59,14 @@ start :-
     assertz(cspecialattack(SpecialAttack)),
     assertz(chealth(Health)),
     assertz(cdefense(Defense)),
+    assertz(cmoney(0)),
+    assertz(cinventory([], 0)),
+
+    % Starter pack
+    assertz(cweapon(Job)),
+    assertz(carmor(Job+3)),
+    add_item(Job),
+    add_item(4),
 
     write('You choose '),
     write(Name),
