@@ -1,4 +1,22 @@
-﻿1. Character
+﻿DEADLINE
+22 November : Deadline 
+4 Desember  : Video
+
+=======================================================
+Character
+	1. Leveling up
+	2. Equipment
+
+Store, Inventory & Items
+
+Exploration & Enemy
+
+Quest
+	Encouter enemy
+	Interact sama special location
+=======================================================
+
+1. Character
 • 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. ===DONE===
 • Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. 
 • Karakter pemain dapat naik level 
