@@ -1,13 +1,14 @@
 /* Character */
 /* Berisi segala fungsi dan status yang berkaitan dengan pemain  */
 
-% c = current
+/* Dynamic variable */
+% Current Status dari pemain (c = current)
 :- dynamic(cjob/1).
 :- dynamic(cattack/1).
 :- dynamic(cspecialattack/1).
 :- dynamic(chealth/1).
 :- dynamic(cdefense/1).
-:- dynamic(cmoney/1).
+:- dynamic(cgold/1).
 :- dynamic(cweapon/1).
 :- dynamic(carmor/1).
 
@@ -45,10 +46,19 @@ status :-
     chealth(Health),
     cdefense(Defense),
 
+    cweapon(Weapon),
+    carmor(Armor),
+    item_name(Weapon, WeaponName),
+    item_name(Armor, ArmorName),
+    weapon_stat(Weapon, WeaponStat),
+    armor_stat(Armor, ArmorStat),
+
     % Output
     write('Your job: '), write(Name), nl,
-    write('Your current attack: '), write(Attack), nl,
+    write('Your current attack: '), write(Attack), write(' + '), write(WeaponStat), nl,
     write('Your current special attack: '), write(SpecialAttack), nl,
     write('Your current health: '), write(Health), nl,
-    write('Your current defense: '), write(Defense), nl.
+    write('Your current defense: '), write(Defense), write(' + '), write(ArmorStat), nl,
+    write('Your current weapon: '), write(WeaponName), nl,
+    write('Your current armor: '), write(ArmorName), nl.
 

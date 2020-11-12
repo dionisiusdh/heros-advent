@@ -59,18 +59,20 @@ start :-
     assertz(cspecialattack(SpecialAttack)),
     assertz(chealth(Health)),
     assertz(cdefense(Defense)),
-    assertz(cmoney(0)),
+    assertz(cgold(500)),
     assertz(cinventory([], 0)),
+    generate_inventory_count(100, InventoryCount),
+    assertz(cinventory_count(InventoryCount)),
 
     % Starter pack
     assertz(cweapon(Job)),
-    assertz(carmor(Job+3)),
+    assertz(carmor(4)),
     add_item(Job),
     add_item(4),
 
     write('You choose '),
     write(Name),
-    write(', lets explore the world'),
+    write(', lets explore the world!'),
 
     % Initiate map objects
     assertz(object(5, 5, 'P')),
