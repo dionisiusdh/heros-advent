@@ -47,13 +47,22 @@ print_n(N) :-
     get_n(Inventory, N, ItemID_N),
     get_n(InventoryCount, ItemID_N, ItemCount_N),
     item_name(ItemID_N, ItemName_N),
+    item_equipable(ItemID_N, Job_N),
+    job_stat(Job_N, JobName),
     
     write('ID '),
     write(ItemID_N),
     write(' - '),
     write(ItemCount_N),
     write(' '),
-    write(ItemName_N), nl.
+    write(ItemName_N),
+    (\+ (ItemID_N = 50) -> 
+        write(' ('),
+        write(JobName),
+        write(')'),
+        nl
+    ;
+        nl).
 
 % Print list
 print_list(I) :- 

@@ -15,7 +15,8 @@ w :-
     Y2 =< H,
     !,
     retract(object(X, Y, 'P')),
-    assertz(object(X, Y2, 'P')).
+    assertz(object(X, Y2, 'P')),
+    write('You move north.').
 
 w :-
     start_flag(false),
@@ -36,7 +37,8 @@ a :-
     X2 =< W,
     !,
     retract(object(X, Y, 'P')),
-    assertz(object(X2, Y, 'P')).
+    assertz(object(X2, Y, 'P')),
+    write('You move west.').
 
 a :-
     start_flag(false),
@@ -57,7 +59,8 @@ s :-
     Y2 =< H,
     !,
     retract(object(X, Y, 'P')),
-    assertz(object(X, Y2, 'P')).
+    assertz(object(X, Y2, 'P')),
+    write('You move south.').
 
 s :-
     start_flag(false),
@@ -78,7 +81,8 @@ d :-
     X2 =< W,
     !,
     retract(object(X, Y, 'P')),
-    assertz(object(X2, Y, 'P')).
+    assertz(object(X2, Y, 'P')),
+    write('You move east.').
 
 d :-
     start_flag(false),

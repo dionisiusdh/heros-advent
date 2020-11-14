@@ -18,7 +18,7 @@ Quest
 
 1. Character
 • 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. ===DONE===
-• Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. 
+• Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. ===DONE===
 • Karakter pemain dapat naik level 
     - Saat mencapai experience yang sudah ditentukan. 
     - Status attack, defense, dan max HP akan meningkat. 
@@ -35,11 +35,11 @@ Quest
     - Lokasi pengambilan Quest: Q ===DONE===
 
 3. Inventory
-• Menyimpan hasil dari gacha dan potion sebanyak 100 items saja. 
-• Pemain dapat memakai atau membuang barang yang terdapat di inventory.
+• Menyimpan hasil dari gacha dan potion sebanyak 100 items saja. ===DONE===
+• Pemain dapat memakai atau membuang barang yang terdapat di inventory. 
 
 4. Items
-• Terdiri dari equipment dan potion. 
+• Terdiri dari equipment dan potion. ===DONE===
 • Equipment berupa senjata, armor, dan accessory yang memiliki restriksi job tertentu yang dapat memakainya.
 
 5. Enemy 
@@ -58,12 +58,12 @@ Quest
 
 7. Exploration Mechanism
 • Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. ===DONE===
-• Dapat melakukan gacha dan membeli potion di store
+• Dapat melakukan gacha dan membeli potion di store. ===DONE===
 • Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact
 • Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. 
 • Pada saat berada di field
-    - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory 
-    - Dapat melihat status pemain saat berada pada field.
+    - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory.
+    - Dapat melihat status pemain saat berada pada field. ===DONE===
 • Pada saat berpindah
     - Pemain memiliki peluang khusus untuk bertemu dengan enemy. 
     - Ketika bertemu musuh, ditampilkan jenis enemy, serta status dari enemy tersebut. 
@@ -80,9 +80,9 @@ Quest
 • Saat turn musuh, musuh dapat melakukan special attack atau attack. Sistem turn musuh dibebaskan implementasinya.
 
 9. Store
-• Pemain dapat mendapatkan equipment di Store dengan menggunakan gold, namun equipment ini didapatkan dengan sistem gacha/lootbox. 
-• Pada sistem ini, pemain mengeluarkan gold dalam jumlah tertentu yang kemudian dapat meng-generate equipment tertentu yang acak. 
-• Potion dapat dibeli secara langsung di Store tanpa perlu menggunakan sistem gacha.
+• Pemain dapat mendapatkan equipment di Store dengan menggunakan gold, namun equipment ini didapatkan dengan sistem gacha/lootbox. ===DONE===
+• Pada sistem ini, pemain mengeluarkan gold dalam jumlah tertentu yang kemudian dapat meng-generate equipment tertentu yang acak. ===DONE===
+• Potion dapat dibeli secara langsung di Store tanpa perlu menggunakan sistem gacha. ===DONE===
 
 10. Fail State
 • Pemain dinyatakan kalah apabila HP pemain menyentuh angka 0. 
