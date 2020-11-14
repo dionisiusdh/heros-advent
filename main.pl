@@ -71,6 +71,8 @@ start :-
 
     % Initiate location track
     assertz(inShop(0)),
+    assertz(inDungeon(0)),
+    assertz(inQuest(0)),
 
     % Starter pack
     assertz(cweapon(Job)),

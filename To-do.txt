@@ -23,11 +23,11 @@ Quest
     - Saat mencapai experience yang sudah ditentukan. 
     - Status attack, defense, dan max HP akan meningkat. 
     - Sistem level up dibebaskan berapa exp yang dibutuhkan dan berapa growth rate statusnya.
-• Karakter hanya dapat memakai equipment sesuai dengan job yang mereka pilih. 
+• Karakter hanya dapat memakai equipment sesuai dengan job yang mereka pilih.  ===DONE===
 
 2. Map
 • Min 10x10, ditampilkan dengan command ===DONE===
-• Posisi:  
+• Posisi:  ===DONE===
     - Pemain: P	===DONE===
     - Pagar: #	===DONE===
     - Lokasi Store: S ===DONE===
@@ -36,11 +36,11 @@ Quest
 
 3. Inventory
 • Menyimpan hasil dari gacha dan potion sebanyak 100 items saja. ===DONE===
-• Pemain dapat memakai atau membuang barang yang terdapat di inventory. 
+• Pemain dapat memakai atau membuang barang yang terdapat di inventory. ===DONE===
 
 4. Items
 • Terdiri dari equipment dan potion. ===DONE===
-• Equipment berupa senjata, armor, dan accessory yang memiliki restriksi job tertentu yang dapat memakainya.
+• Equipment berupa senjata, armor, dan accessory yang memiliki restriksi job tertentu yang dapat memakainya. ===DONE===
 
 5. Enemy 
 • Musuh minimal terdiri dari 3 jenis, yaitu slime, goblin, dan wolf. 
@@ -61,8 +61,8 @@ Quest
 • Dapat melakukan gacha dan membeli potion di store. ===DONE===
 • Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact
 • Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. 
-• Pada saat berada di field
-    - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory.
+• Pada saat berada di field ===DONE===
+    - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory. ===DONE===
     - Dapat melihat status pemain saat berada pada field. ===DONE===
 • Pada saat berpindah
     - Pemain memiliki peluang khusus untuk bertemu dengan enemy. 
@@ -75,7 +75,7 @@ Quest
 • Saat melakukan attack dan special attack, 
     - Pemain akan mengurangi HP musuh. 
     - Special attack dapat digunakan setiap 3 turn sekali. 
-• Use potions akan memakai potion yang terdapat pada inventory. 
+• Use potions akan memakai potion yang terdapat pada inventory. ===DONE===
 • Jika tidak terdapat potion, akan mengulang turn untuk melakukan attack, special attack, atau run. Saat melakukan run, terdapat kemungkinan run gagal, kemudian turn berpindah ke musuh.
 • Saat turn musuh, musuh dapat melakukan special attack atau attack. Sistem turn musuh dibebaskan implementasinya.
 

@@ -107,8 +107,15 @@ add_item(ItemID) :-
 
 % Deleting an item based on its ID
 delete_item(ItemID) :-
+    % Cek ketersediaan item dalam inventory
+    cinventory(Inventory, _),
+    is_member(Inventory, ItemID),
+
+    % Ambil data inventory count
     cinventory_count(InventoryCount),
     get_n(InventoryCount, ItemID, Count),
+
+    % Mengurangi item count dalam inventory
     Count2 is Count - 1,
     set_n(InventoryCount, ItemID, Count2, InventoryCount2),
     retract(cinventory_count(InventoryCount)),
@@ -117,10 +124,21 @@ delete_item(ItemID) :-
     item_name(ItemID, ItemName),
     write(ItemName), nl.
 
+delete_item(_) :-
+    write('You do not have such item with corresponding ID').
+
 /* Use and equip */
 equip_weapon(ItemID) :-
+    % Cek ketersediaan item dalam inventory
     cinventory(Inventory, _),
     is_member(Inventory, ItemID),
+
+    % Cek restriksi job
+    cjob(Job),
+    item_equipable(ItemID, EquipableJob),
+    Job == EquipableJob,
+
+    % Mengganti current weapon
     retract(cweapon(_)),
     assertz(cweapon(ItemID)),
     item_name(ItemID, ItemName),
@@ -128,16 +146,31 @@ equip_weapon(ItemID) :-
     write(' equipped successfully'), nl.
 
 equip_weapon(_) :-
+    \+ Job == EquipableJob,
+    write('Your job is not suitable with the item').
+
+equip_weapon(_) :-
     write('You do not have such weapon with corresponding ID').
 
 equip_armor(ItemID) :-
+    % Cek ketersediaan item dalam inventory
     cinventory(Inventory, _),
     is_member(Inventory, ItemID),
+
+    % Cek restriksi job
+    cjob(Job),
+    item_equipable(ItemID, EquipableJob),
+    Job == EquipableJob,
+
     retract(carmor(_)),
     assertz(carmor(ItemID)),
     item_name(ItemID, ItemName),
     write(ItemName), 
     write(' equipped successfully'), nl.
+
+equip_armor(_) :-
+    \+ Job == EquipableJob,
+    write('Your job is not suitable with the item').
 
 equip_armor(_) :-
     write('You do not have such armor with corresponding ID').
