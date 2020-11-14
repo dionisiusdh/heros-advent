@@ -24,6 +24,14 @@ help :-
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
 
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
+    write('%                              Inventory Commands                              %'),nl,
+    write('% 1. delete_item(ItemID).    : membuang 1 item sesuai IDnya                    %'),nl,
+    write('% 2. equip_weapon(ItemID).   : mengequip weapon sesuai IDnya                   %'),nl,
+    write('% 3. equip_armor(ItemID).    : mengequip armor sesuai IDnya                    %'),nl,
+    write('% 4. use_potion(ItemID).     : memakai potion untuk merestore health           %'),nl,
+    write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
+
+    write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                          Special Location Commands                           %'),nl,
     write('% SHOP                                                                         %'),nl,
     write('% 1. shop.        : memasuki dan menampilkan menu shop                         %'),nl,
