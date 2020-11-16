@@ -52,7 +52,7 @@ generate_random_enemy :-
     enemy_attack(EnemyID, EnemyAttack),
     EnemyAttack2 is EnemyAttack * Level,
     retract(cenemyattack(_)),
-    assertz(cenemyattack(EnemyAttack2)).
+    assertz(cenemyattack(EnemyAttack2)),
 
     enemy_defense(EnemyID, EnemyDefense),
     EnemyDefense2 is EnemyDefense * Level,

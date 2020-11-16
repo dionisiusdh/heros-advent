@@ -12,6 +12,7 @@
 :- include('status.pl').
 :- include('enemy.pl').
 :- include('encounter.pl').
+:- include('quest.pl').
 
 /* Dynamic variable */
 % Initiate start flag
@@ -29,6 +30,7 @@ start :-
     ['status.pl'],
     ['enemy.pl'],
     ['encounter.pl'],
+    ['quest.pl'],
     
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                                   Game                                       %'),nl,
@@ -77,6 +79,7 @@ start :-
     assertz(inShop(0)),
     assertz(inDungeon(0)),
     assertz(inQuest(0)),
+    assertz(lagiQuest(0)),
 
     % Starter pack
     assertz(cweapon(Job)),
@@ -98,14 +101,18 @@ start :-
     assertz(object(5, 5, 'P')),
     assertz(object(9, 8, 'D')),
     assertz(object(7, 2, 'S')),
-    assertz(object(2, 3, 'Q')).
+    assertz(object(2, 3, 'Q')),
 
     % Initiate quest requirements
     assertz(requiredQuestX(0)),
     assertz(requiredQuestY(0)),
-    assertz(requiredQuestZ(0)).
+    assertz(requiredQuestZ(0)),
 
     % Initiate quest kill status
     assertz(killX(0)),
     assertz(killY(0)),
-    assertz(killZ(0)).
+    assertz(killZ(0)),
+    
+    % Initiate quest rewards
+    assertz(rewardQuestX(0)),
+    assertz(rewardQuestY(0)).
