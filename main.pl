@@ -10,11 +10,13 @@
 :- include('items.pl').
 :- include('shop.pl').
 :- include('status.pl').
+:- include('enemy.pl').
+:- include('encounter.pl').
 
 /* Dynamic variable */
 % Initiate start flag
 :- dynamic(start_flag/1).
-start_flag(false).             % Untuk debug, set jadi true
+start_flag(false).
 
 start :-
     ['map.pl'],
@@ -25,6 +27,8 @@ start :-
     ['items.pl'],
     ['shop.pl'],
     ['status.pl'],
+    ['enemy.pl'],
+    ['encounter.pl'],
     
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                                   Game                                       %'),nl,
@@ -95,3 +99,13 @@ start :-
     assertz(object(9, 8, 'D')),
     assertz(object(7, 2, 'S')),
     assertz(object(2, 3, 'Q')).
+
+    % Initiate quest requirements
+    assertz(requiredQuestX(0)),
+    assertz(requiredQuestY(0)),
+    assertz(requiredQuestZ(0)).
+
+    % Initiate quest kill status
+    assertz(killX(0)),
+    assertz(killY(0)),
+    assertz(killZ(0)).

@@ -1,5 +1,6 @@
 /* Shop */
 /* Berisi segala fungsi yang berkaitan dengan shop  */
+/* Penerapan : Cut */
 
 /* Dynamic variable */
 % inShop : Apakah pemain sedang berada di lokasi shop. 0 = false, 1 = true.

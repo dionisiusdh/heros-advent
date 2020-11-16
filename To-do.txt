@@ -1,18 +1,27 @@
-﻿DEADLINE
+﻿=======================================================
+Kelompok 04 - KepalaPundakLututKaki
+Kelas 02
+=======================================================
+Dionisius Darryl H. 	/ 13519058
+James Chandra 		/ 13519078
+Jordan Daniel J. 	/ 13519098
+Gregorius Dimas B. 	/ 13519190
+=======================================================
+RENCANA DEADLINE
 22 November : Deadline 
 4 Desember  : Video
-
 =======================================================
-Character
+PEMBAGIAN TUGAS
+Character (James)
 	1. Leveling up
 	2. Equipment
 
-Store, Inventory & Items
+Store, Inventory & Items (Dion)
 
-Exploration & Enemy
+Exploration & Enemy (Jordan)
 
-Quest
-	Encouter enemy
+Quest (Dimas)
+	Encounter enemy
 	Interact sama special location
 =======================================================
 

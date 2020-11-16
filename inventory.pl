@@ -1,6 +1,6 @@
 /* Inventory */
 /* Berisi segala fungsi yang berkaitan dengan inventory  */
-/* Penerapan: List, Rekurens */
+/* Penerapan: List, Rekurens, Loop, Cut */
 
 /* Dynamic variable */
 % cinventory([Inventory], Total) : [Inventory] adalah inventory dari pengguna dan Total adalah jumlah item dalam inventory
