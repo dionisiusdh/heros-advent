@@ -3,6 +3,8 @@
 
 % Status
 status :-
+    start_flag(true),
+
     % Getting character stats
     cjob(Job),
     job_stat(Job, JobName),
@@ -35,3 +37,8 @@ status :-
     write('Gold: '), write(Gold), nl,
     write('Your current weapon: '), write(WeaponName), nl,
     write('Your current armor: '), write(ArmorName), nl.
+
+status :-
+    start_flag(false),
+    !,
+    write('Please start the game. Type \'start.\'').

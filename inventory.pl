@@ -106,7 +106,7 @@ add_item(ItemID) :-
     ).
 
 % Deleting an item based on its ID
-delete_item(ItemID) :-
+deleteItem(ItemID) :-
     % Cek ketersediaan item dalam inventory
     cinventory(Inventory, _),
     is_member(Inventory, ItemID),
@@ -124,11 +124,11 @@ delete_item(ItemID) :-
     item_name(ItemID, ItemName),
     write(ItemName), nl.
 
-delete_item(_) :-
+deleteItem(_) :-
     write('You do not have such item with corresponding ID').
 
 /* Use and equip */
-equip_weapon(ItemID) :-
+equipWeapon(ItemID) :-
     % Cek ketersediaan item dalam inventory
     cinventory(Inventory, _),
     is_member(Inventory, ItemID),
@@ -145,14 +145,14 @@ equip_weapon(ItemID) :-
     write(ItemName), 
     write(' equipped successfully'), nl.
 
-equip_weapon(_) :-
+equipWeapon(_) :-
     \+ Job == EquipableJob,
     write('Your job is not suitable with the item').
 
-equip_weapon(_) :-
+equipWeapon(_) :-
     write('You do not have such weapon with corresponding ID').
 
-equip_armor(ItemID) :-
+equipArmor(ItemID) :-
     % Cek ketersediaan item dalam inventory
     cinventory(Inventory, _),
     is_member(Inventory, ItemID),
@@ -168,14 +168,14 @@ equip_armor(ItemID) :-
     write(ItemName), 
     write(' equipped successfully'), nl.
 
-equip_armor(_) :-
+equipArmor(_) :-
     \+ Job == EquipableJob,
     write('Your job is not suitable with the item').
 
-equip_armor(_) :-
+equipArmor(_) :-
     write('You do not have such armor with corresponding ID').
 
-use_potion :-
+usePotion :-
     cinventory_count(InventoryCount),
     get_n(InventoryCount, 50, Count),
     Count2 is Count - 1,
@@ -198,11 +198,11 @@ use_potion :-
     assertz(chealth(HealedHealth)),
     write('Successfully used 1 potion'), nl.
 
-use_potion :-
+usePotion :-
     \+ Health == MaxHealth,
     write('Your health is full!'), nl.
 
-use_potion :-
+usePotion :-
     write('No potion available'), nl.
 
 /* ******************* Initiation ******************* */
@@ -214,14 +214,19 @@ generate_inventory_count(N, [0 | T]) :-
 
 % Show inventory
 inventory :- 
+    start_flag(true),
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                              Inventory Commands                              %'),nl,
-    write('% 1. delete_item(ItemID).    : membuang 1 item sesuai IDnya                    %'),nl,
-    write('% 2. equip_weapon(ItemID).   : mengequip weapon sesuai IDnya                   %'),nl,
-    write('% 3. equip_armor(ItemID).    : mengequip armor sesuai IDnya                    %'),nl,
-    write('% 4. use_potion.             : memakai potion untuk merestore health           %'),nl,
-    write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
+    write('% 1. deleteItem(ItemID).    : membuang 1 item sesuai IDnya                     %'),nl,
+    write('% 2. equipWeapon(ItemID).   : mengequip weapon sesuai IDnya                    %'),nl,
+    write('% 3. equipArmor(ItemID).    : mengequip armor sesuai IDnya                     %'),nl,
+    write('% 4. usePotion.             : memakai potion untuk merestore health            %'),nl,
+    write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl, nl,
     write('Your items: '),nl,
     print_list(1).
 
+inventory :-
+    start_flag(false),
+    !,
+    write('Please start the game. Type \'start.\'').
 

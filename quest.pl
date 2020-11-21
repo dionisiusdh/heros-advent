@@ -23,6 +23,8 @@
 :- dynamic(rewardQuestY/1).
 
 quest :-
+    start_flag(true),
+
     % Cek apakah player berada di posisi pengambilan quest.
     object(A, B, 'P'),
     object(XQuest, YQuest, 'Q'),
@@ -61,6 +63,11 @@ quest :-
     ;
         write('No quest.')
     ).
+
+quest :-
+    start_flag(false),
+    !,
+    write('Please start the game. Type \'start.\'').
 
 quest :-
     inQuest(0),

@@ -7,6 +7,8 @@
 :- dynamic(inShop/1).
 
 shop :-
+    start_flag(true),
+
     % Cek apakah player berada di posisi shop
     object(X, Y, 'P'),
     object(XShop, YShop, 'S'),
@@ -21,13 +23,18 @@ shop :-
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('% SHOP AVAILABLE COMMANDS                                                      %'),nl,
     write('% 1. shop.        : memasuki dan menampilkan menu shop                         %'),nl,
-    write('% 1. gacha.       : melakukan gacha                                            %'),nl,
-    write('% 1. buyPotion.   : membeli potion                                             %'),nl,
-    write('% 2. exitShop.    : keluar dari shop                                           %'),nl,
+    write('% 2. gacha.       : melakukan gacha                                            %'),nl,
+    write('% 3. buyPotion.   : membeli potion                                             %'),nl,
+    write('% 4. exitShop.    : keluar dari shop                                           %'),nl,
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl, nl,
     write('What do you want to buy?'), nl,
     write('1. Gacha (1000 gold)'), nl,
     write('2. Health Potion (100 gold)'), nl.
+
+shop :-
+    start_flag(false),
+    !,
+    write('Please start the game. Type \'start.\'').
 
 shop :-
     write('Please go to the shop!'),nl.
@@ -50,7 +57,7 @@ gacha :-
     assertz(cgold(Gold2)),
 
     % Menghasilkan random item
-    random(1,9,GachaItem),
+    random(1,19,GachaItem),
     write('Gacha! You got '),
     item_name(GachaItem, ItemName),
     write(ItemName),

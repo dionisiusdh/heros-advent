@@ -13,6 +13,7 @@
 :- include('enemy.pl').
 :- include('encounter.pl').
 :- include('quest.pl').
+:- include('battle.pl').
 
 /* Dynamic variable */
 % Initiate start flag
@@ -31,6 +32,7 @@ start :-
     ['enemy.pl'],
     ['encounter.pl'],
     ['quest.pl'],
+    ['battle.pl'],
     
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('%                                   Game                                       %'),nl,
@@ -80,10 +82,11 @@ start :-
     assertz(inDungeon(0)),
     assertz(inQuest(0)),
     assertz(lagiQuest(0)),
+    assertz(inBattle(0)),
 
     % Starter pack
     assertz(cweapon(Job)),
-    Job2 is Job + 20,
+    Job2 is Job + 9,
     assertz(carmor(Job2)),
     add_item(Job),
     add_item(Job2),
@@ -115,4 +118,11 @@ start :-
     
     % Initiate quest rewards
     assertz(rewardQuestX(0)),
-    assertz(rewardQuestY(0)).
+    assertz(rewardQuestY(0)),
+
+    % Initiate enemy variable
+    assertz(cenemyid(0)),
+    assertz(cenemylevel(0)),
+    assertz(cenemyhp(0)),
+    assertz(cenemyattack(0)),
+    assertz(cenemydefense(0)).

@@ -7,6 +7,7 @@ wall_flag :-
 /* Utara */
 w :-
     start_flag(true),
+    \+ inBattle(1),
     object(X, Y, 'P'),
     Y2 is Y-1,
     \+ object(X, Y2, '#'),
@@ -16,7 +17,8 @@ w :-
     !,
     retract(object(X, Y, 'P')),
     assertz(object(X, Y2, 'P')),
-    write('You move north.').
+    write('You move north.'),
+    encounter.
 
 w :-
     start_flag(false),
@@ -24,11 +26,17 @@ w :-
     write('Please start the game. Type \'start.\'').
 
 w :- 
+    inBattle(1),
+    !,
+    write('You are in battle! Either finish off your enemy or try to run away').
+
+w :- 
     wall_flag.
     
 /* Barat */
 a :-
     start_flag(true),
+    \+ inBattle(1),
     object(X, Y, 'P'),
     X2 is X-1,
     \+ object(X2, Y, '#'),
@@ -38,7 +46,8 @@ a :-
     !,
     retract(object(X, Y, 'P')),
     assertz(object(X2, Y, 'P')),
-    write('You move west.').
+    write('You move west.'),
+    encounter.
 
 a :-
     start_flag(false),
@@ -46,11 +55,17 @@ a :-
     write('Please start the game. Type \'start.\'').
 
 a :- 
+    inBattle(1),
+    !,
+    write('You are in battle! Either finish off your enemy or try to run away').
+
+a :- 
     wall_flag.
     
 /* Selatan */
 s :-
     start_flag(true),
+    \+ inBattle(1),
     object(X, Y, 'P'),
     Y2 is Y+1,
     \+ object(X, Y2, '#'),
@@ -60,7 +75,8 @@ s :-
     !,
     retract(object(X, Y, 'P')),
     assertz(object(X, Y2, 'P')),
-    write('You move south.').
+    write('You move south.'),
+    encounter.
 
 s :-
     start_flag(false),
@@ -68,11 +84,17 @@ s :-
     write('Please start the game. Type \'start.\'').
 
 s :- 
+    inBattle(1),
+    !,
+    write('You are in battle! Either finish off your enemy or try to run away').
+
+s :- 
     wall_flag.
     
 /* Timur */
 d :-
     start_flag(true),
+    \+ inBattle(1),
     object(X, Y, 'P'),
     X2 is X+1,
     \+ object(X2, Y, '#'),
@@ -82,12 +104,18 @@ d :-
     !,
     retract(object(X, Y, 'P')),
     assertz(object(X2, Y, 'P')),
-    write('You move east.').
+    write('You move east.'),
+    encounter.
 
 d :-
     start_flag(false),
     !,
     write('Please start the game. Type \'start.\'').
+
+d :- 
+    inBattle(1),
+    !,
+    write('You are in battle! Either finish off your enemy or try to run away').
 
 d :- 
     wall_flag.

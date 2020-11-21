@@ -19,7 +19,7 @@ enemy_name(4, 'Boss').
 enemy_hp(1,100).
 enemy_hp(2,200).
 enemy_hp(3,300).
-enemy_hp(4,1000).
+enemy_hp(4,1500).
 
 /*Enemy Attack*/
 /*enemy_hp(ID,Attack)*/
@@ -31,16 +31,16 @@ enemy_attack(4,200).
 /*Enemy Defense*/
 /*enemy_hp(ID,Defense)*/
 enemy_defense(1,15).
-enemy_defense(1,25).
-enemy_defense(1,40).
-enemy_defense(1,150).
+enemy_defense(2,25).
+enemy_defense(3,40).
+enemy_defense(4,300).
 
 generate_random_enemy :-
-    random(1, 3, EnemyID),
+    random(1, 4, EnemyID),
     retract(cenemyid(_)),
     assertz(cenemyid(EnemyID)),
 
-    random(1, 3, Level),
+    random(1, 4, Level),
     retract(cenemylevel(_)),
     assertz(cenemylevel(Level)),
 

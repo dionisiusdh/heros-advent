@@ -13,15 +13,15 @@ weapon_stat(8, 60).
 weapon_stat(9, 70).
 
 % Armor (ID, Defense)
-armor_stat(21, 20).
-armor_stat(22, 15).
-armor_stat(23, 15).
-armor_stat(24, 30).
-armor_stat(25, 20).
-armor_stat(26, 20).
-armor_stat(27, 60).
-armor_stat(28, 45).
-armor_stat(29, 45).
+armor_stat(10, 20).
+armor_stat(11, 15).
+armor_stat(12, 15).
+armor_stat(13, 30).
+armor_stat(14, 20).
+armor_stat(15, 20).
+armor_stat(16, 60).
+armor_stat(17, 45).
+armor_stat(18, 45).
 
 % Potion (ID, Healing)
 potion_stat(50, 100).
@@ -37,15 +37,15 @@ item_name(7, 'Golden Sword').
 item_name(8, 'Golden Bow').
 item_name(9, 'Golden Staff').
 
-item_name(21, 'Wooden Armor').
-item_name(22, 'Wooden Vest').
-item_name(23, 'Wooden Robe').
-item_name(24, 'Iron Armor').
-item_name(25, 'Iron Vest').
-item_name(26, 'Iron Robe').
-item_name(27, 'Golden Armor').
-item_name(28, 'Golden Vest').
-item_name(29, 'Golden Robe').
+item_name(10, 'Wooden Armor').
+item_name(11, 'Wooden Vest').
+item_name(12, 'Wooden Robe').
+item_name(13, 'Iron Armor').
+item_name(14, 'Iron Vest').
+item_name(15, 'Iron Robe').
+item_name(16, 'Golden Armor').
+item_name(17, 'Golden Vest').
+item_name(18, 'Golden Robe').
 
 item_name(50, 'Potion').
 
@@ -59,13 +59,13 @@ item_equipable(6, 3).
 item_equipable(7, 1).
 item_equipable(8, 2).
 item_equipable(9, 3).
-item_equipable(21, 1).
-item_equipable(22, 2).
-item_equipable(23, 3).
-item_equipable(24, 1).
-item_equipable(25, 2).
-item_equipable(26, 3).
-item_equipable(27, 1).
-item_equipable(28, 2).
-item_equipable(29, 3).
+item_equipable(19, 1).
+item_equipable(11, 2).
+item_equipable(12, 3).
+item_equipable(13, 1).
+item_equipable(14, 2).
+item_equipable(15, 3).
+item_equipable(16, 1).
+item_equipable(17, 2).
+item_equipable(18, 3).
 item_equipable(50, 1).

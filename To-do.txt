@@ -52,18 +52,18 @@ Quest (Dimas)
 • Equipment berupa senjata, armor, dan accessory yang memiliki restriksi job tertentu yang dapat memakainya. ===DONE===
 
 5. Enemy 
-• Musuh minimal terdiri dari 3 jenis, yaitu slime, goblin, dan wolf. 
+• Musuh minimal terdiri dari 3 jenis, yaitu slime, goblin, dan wolf.  ===DONE===
 • Tiap musuh memiliki status level, HP, Attack, dan Defense sendiri. Sistem status musuh yang muncul dibebaskan.
 • Terdapat juga boss musuh yang harus dikalahkan untuk memenangkan game. 
     - Boss tersebut berada di boss dungeon yang terletak di suatu tiles di map. 
     - Boss memiliki status yang sama sepanjang permainan (semisal level 70, attack 1000, dan defense 1000).
 
 6. Quest
-• Quest merupakan misi yang harus diselesaikan oleh pemain, dan diambil dari tempat pengambilan Quest. 
-• Sebuah quest terdiri atas sebuah tripel bilangan (x,y,z) : harus mengalahkan x buah slime, y buah goblin, dan z buah wolf. 
-• Apabila menyelesaikan sebuah quest, pemain menerima reward berupa tambahan EXP serta sejumlah gold. 
-• Dalam satu waktu, tidak boleh terdapat dua quest yang aktif, yang berarti pemain harus menyelesaikan sebuah quest terlebih dahulu sebelum dapat menerima quest yang baru. 
-• Implementasi penentuan quest serta rewardnya dibebaskan, dan harus dijelaskan pada laporan.
+• Quest merupakan misi yang harus diselesaikan oleh pemain, dan diambil dari tempat pengambilan Quest.  ===DONE===
+• Sebuah quest terdiri atas sebuah tripel bilangan (x,y,z) : harus mengalahkan x buah slime, y buah goblin, dan z buah wolf. ===DONE===
+• Apabila menyelesaikan sebuah quest, pemain menerima reward berupa tambahan EXP serta sejumlah gold. ===DONE===
+• Dalam satu waktu, tidak boleh terdapat dua quest yang aktif, yang berarti pemain harus menyelesaikan sebuah quest terlebih dahulu sebelum dapat menerima quest yang baru. ===DONE===
+• Implementasi penentuan quest serta rewardnya dibebaskan, dan harus dijelaskan pada laporan. ===DONE===
 
 7. Exploration Mechanism
 • Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. ===DONE===
