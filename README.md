@@ -22,7 +22,7 @@
 Sebuah *survival role-playing* game yang dibuat dengan menggunakan bahasa pemrograman deklaratif Prolog.
 
 ## Screenshots
-![]()
+![](./img/pic1.png)
 
 ## Technologies
 * GNU Prolog 1.4.5
