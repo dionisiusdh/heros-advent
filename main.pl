@@ -55,7 +55,7 @@ start :-
     write('%(_) (_)`\\____)(_)  `\\___/\'   (____/   (_) (_)`\\__,_)`\\___/\'`\\____)(_) (_)`\\__)%'),nl,
                                                                               
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
-    write('%                                   Game                                       %'),nl,
+    write('%                               Hero\'s Advent                                  %'),nl,
     write('% 1. start       : untuk memulai petualanganmu                                 %'),nl,
     write('% 2. map         : menampilkan peta                                            %'),nl,
     write('% 3. status      : menampilkan kondisimu terkini                               %'),nl,

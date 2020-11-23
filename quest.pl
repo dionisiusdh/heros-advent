@@ -36,11 +36,15 @@ quest :-
     % Menu
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl,
     write('% QUEST AVAILABLE COMMANDS                                                     %'),nl,
-    write('% 1. getQuest.      : mengambil quest random                                   %'),nl,
-    write('% 2. claimReward.    : mengambil hadiah quest setelah selesai dilakukan        %'),nl,
+    write('% 1. getQuest.     : mengambil quest random                                    %'),nl,
+    write('% 2. claimReward.  : mengambil hadiah quest setelah selesai dilakukan          %'),nl,
+    write('% 3. exitQuest.    : keluar dari tempat pengambilan quest                      %'),nl,
     write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'),nl, nl,
     write('Your current quest: '), nl,
     lagiQuest(Status),
+    killX(SlimeKilled),
+    killY(GoblinKilled),
+    killZ(WolfKilled),
     requiredQuestX(SlimeRequired),
     requiredQuestY(GoblinRequired),
     requiredQuestZ(WolfRequired),
@@ -49,10 +53,16 @@ quest :-
 
     (Status = 1 -> 
         write('Kill: '), nl,
+        write(SlimeKilled),
+        write('/'),
         write(SlimeRequired),
         write(' Slime'), nl,
+        write(GoblinKilled),
+        write('/'),
         write(GoblinRequired),
         write(' Goblin'), nl,
+        write(WolfKilled),
+        write('/'),
         write(WolfRequired),
         write(' Wolf'), nl,
         write('Reward: '),
@@ -73,6 +83,11 @@ quest :-
     inQuest(0),
     write('Please go to the quest location!'),nl.
 
+exitQuest :-
+    retract(inQuest(_)),
+    assertz(inQuest(0)),
+    write('See ya later.'), nl.
+
 getQuest :-
     % Cek apakah lagi melakukan quest
     \+ lagiQuest(1),
@@ -88,13 +103,20 @@ getQuest :-
     assertz(requiredQuestY(GoblinRequired)),
     retract(requiredQuestZ(0)),
     assertz(requiredQuestZ(WolfRequired)),
+
+    retract(killX(_)),
+    assertz(killX(0)),
+    retract(killY(_)),
+    assertz(killY(0)),
+    retract(killZ(_)),
+    assertz(killZ(0)),
     
     % Generate dan menyimpan nilai random sebagai reward apabila character berhasil menyelesaikan quest.
     random(1,100,ExpRandomReward),
     random(1,1000,GoldRandomReward),
 
-    ExpReward is ExpRandomReward + 10*SlimeRequired + 10*GoblinRequired + 10*WolfRequired,
-    GoldReward is GoldRandomReward + 100*SlimeRequired + 100*GoblinRequired + 100*WolfRequired,
+    ExpReward is ExpRandomReward + 30*SlimeRequired + 40*GoblinRequired + 50*WolfRequired,
+    GoldReward is GoldRandomReward + 200*SlimeRequired + 300*GoblinRequired + 400*WolfRequired,
 
     retract(rewardQuestX(_)),
     assertz(rewardQuestX(ExpReward)),
@@ -129,5 +151,47 @@ claimReward :-
     object(XQuest, YQuest, 'Q'),
     A == XQuest,
     B == YQuest,
-    retract(inQuest(0)),
-    assertz(inQuest(1)).
+    retract(inQuest(_)),
+    assertz(inQuest(1)),
+    
+    % Cek apakah jumlah enemy yang terbunuh sudah mencukupi.
+    killX(XSlain),
+    requiredQuestX(XRequired),
+    killY(YSlain),
+    requiredQuestY(YRequired),
+    killZ(ZSlain),
+    requiredQuestZ(ZRequired),
+    XSlain >= XRequired,
+    YSlain >= YRequired,
+    ZSlain >= ZRequired, !,
+    
+    % Mengambil reward
+    rewardQuestX(RewardExp),
+    rewardQuestY(RewardGold),
+
+    % Menambah Exp player dengan reward
+    cexp(CurrentExp),
+    AddedExp is CurrentExp + RewardExp,
+    retract(cexp(_)),
+    assertz(cexp(AddedExp)),
+
+    % Menambah Exp player dengan reward
+    cgold(CurrentGold),
+    AddedGold is CurrentGold + RewardGold,
+    retract(cexp(_)),
+    assertz(cexp(AddedGold)),
+
+    % Menulis Reward.
+    write('Congratulations. Here is your Reward :'),nl,
+    write('Exp Reward : '),
+    write(RewardExp),nl,
+    write('Gold Reward : '),
+    write(RewardGold),nl.
+
+claimReward :-
+    inQuest(0),
+    write('Please go to the quest location to claim your reward!'), nl.
+
+claimReward :-
+    !,
+    write('Your kill count is not enough! Kill more monster'), nl.

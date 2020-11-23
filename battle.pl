@@ -178,7 +178,34 @@ enemy_check :-
     % Penggantian Exp baru
     exp_gained(Def,ExpGain),
     add_exp(ExpGain),
-    nl,write('You earn '), write(ExpGain), write(' exp'),nl, !,
+    nl, write('You earn '), write(ExpGain), write(' exp'), nl, !,
+
+    % Ganti kill count untuk quest
+    cenemyid(EnemyID),
+    killX(CurrentKillX),
+    killY(CurrentKillY),
+    killZ(CurrentKillZ),
+    (EnemyID == 1 ->
+        CurrentKillXNew is CurrentKillX + 1,
+        retract(killX(_)),
+        assertz(killX(CurrentKillXNew))
+    ;
+    write('')
+    ),
+    (EnemyID == 2 ->
+        CurrentKillYNew is CurrentKillY + 1,
+        retract(killY(_)),
+        assertz(killY(CurrentKillYNew))
+    ;
+    write('')
+    ),
+    (EnemyID == 3 ->
+        CurrentKillZNew is CurrentKillZ + 1,
+        retract(killZ(_)),
+        assertz(killZ(CurrentKillZNew))
+    ;
+    write('')
+    ),
 
     retract(inBattle(_)),
     assertz(inBattle(0)), !,
@@ -271,11 +298,11 @@ opponent_turn :- !,
     player_check.
 
 % Monster attack/special attack choice
-attack_chance(SpecialChance,SpecialMulti) :-
+attack_chance(SpecialChance, SpecialMulti) :-
     \+ SpecialChance == 4, !,
     SpecialMulti is 1.
 
-attack_chance(SpecialChance,SpecialMulti) :- !,
+attack_chance(_, SpecialMulti) :- !,
     SpecialMulti is 1.5,
 
     cenemyid(ID),

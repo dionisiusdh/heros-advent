@@ -193,9 +193,15 @@ usePotion :-
     assertz(cinventory_count(InventoryCount2)),
 
     % Ubah status health
-    HealedHealth is Health + 100,
-    retract(chealth(Health)),
-    assertz(chealth(HealedHealth)),
+    MaxHealedHealth is MaxHealth - Health,
+    (MaxHealedHealth < 100 ->
+        retract(chealth(_)),
+        assertz(chealth(MaxHealth))
+    ;
+        HealedHealth is Health + 100,
+        retract(chealth(_)),
+        assertz(chealth(HealedHealth))
+    ),
     write('Successfully used 1 potion'), nl.
 
 usePotion :-

@@ -8,6 +8,9 @@ wall_flag :-
 w :-
     start_flag(true),
     \+ inBattle(1),
+    \+ inQuest(1),
+    \+ inShop(1),
+
     object(X, Y, 'P'),
     Y2 is Y-1,
     \+ object(X, Y2, '#'),
@@ -31,12 +34,25 @@ w :-
     write('You are in battle! Either finish off your enemy or try to run away').
 
 w :- 
+    inQuest(1),
+    !,
+    write('You are in quest bank! Exit first').
+
+w :- 
+    inShop(1),
+    !,
+    write('You are in shop! Exit first').
+
+w :- 
     wall_flag.
     
 /* Barat */
 a :-
     start_flag(true),
     \+ inBattle(1),
+    \+ inQuest(1),
+    \+ inShop(1),
+
     object(X, Y, 'P'),
     X2 is X-1,
     \+ object(X2, Y, '#'),
@@ -60,12 +76,25 @@ a :-
     write('You are in battle! Either finish off your enemy or try to run away').
 
 a :- 
+    inQuest(1),
+    !,
+    write('You are in quest bank! Exit first').
+
+a :- 
+    inShop(1),
+    !,
+    write('You are in shop! Exit first').
+
+a :- 
     wall_flag.
     
 /* Selatan */
 s :-
     start_flag(true),
     \+ inBattle(1),
+    \+ inQuest(1),
+    \+ inShop(1),
+
     object(X, Y, 'P'),
     Y2 is Y+1,
     \+ object(X, Y2, '#'),
@@ -89,12 +118,25 @@ s :-
     write('You are in battle! Either finish off your enemy or try to run away').
 
 s :- 
+    inQuest(1),
+    !,
+    write('You are in quest bank! Exit first').
+
+s :- 
+    inShop(1),
+    !,
+    write('You are in shop! Exit first').
+
+s :- 
     wall_flag.
     
 /* Timur */
 d :-
     start_flag(true),
     \+ inBattle(1),
+    \+ inQuest(1),
+    \+ inShop(1),
+
     object(X, Y, 'P'),
     X2 is X+1,
     \+ object(X2, Y, '#'),
@@ -116,6 +158,16 @@ d :-
     inBattle(1),
     !,
     write('You are in battle! Either finish off your enemy or try to run away').
+
+d :- 
+    inQuest(1),
+    !,
+    write('You are in quest bank! Exit first').
+
+d :- 
+    inShop(1),
+    !,
+    write('You are in shop! Exit first').
 
 d :- 
     wall_flag.
