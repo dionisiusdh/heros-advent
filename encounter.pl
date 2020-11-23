@@ -3,7 +3,7 @@
 
 encounter :-  
     % Randomize encounter status
-    random(1, 4, RandomEncounterStatus),
+    random(1, 5, RandomEncounterStatus),
     RandomEncounterStatus == 2,
 
     % If encounter, generate random enemy
