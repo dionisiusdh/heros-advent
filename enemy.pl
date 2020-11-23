@@ -12,7 +12,7 @@
 enemy_name(1, 'Slime').
 enemy_name(2, 'Goblin').
 enemy_name(3, 'Wolf').
-enemy_name(4, 'Boss').
+enemy_name(4, 'Dragon').
 
 /*Enemy HP*/
 /*enemy_hp(ID,HP)*/
