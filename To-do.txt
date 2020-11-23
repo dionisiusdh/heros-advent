@@ -25,13 +25,15 @@ Quest (Dimas)
 	Interact sama special location
 =======================================================
 
+===ALL DONE===
+
 1. Character
 • 3 job : Swordsman, Archer, dan Sorcerer, Tiap job memiliki status yang berbeda-beda. ===DONE===
 • Setelah memulai, pemain akan mendapatkan starter pack sebanyak 5 health potion dan senjata awal. ===DONE===
-• Karakter pemain dapat naik level 
-    - Saat mencapai experience yang sudah ditentukan. 
-    - Status attack, defense, dan max HP akan meningkat. 
-    - Sistem level up dibebaskan berapa exp yang dibutuhkan dan berapa growth rate statusnya.
+• Karakter pemain dapat naik level ===DONE===
+    - Saat mencapai experience yang sudah ditentukan. ===DONE===
+    - Status attack, defense, dan max HP akan meningkat. ===DONE===
+    - Sistem level up dibebaskan berapa exp yang dibutuhkan dan berapa growth rate statusnya. ===DONE===
 • Karakter hanya dapat memakai equipment sesuai dengan job yang mereka pilih.  ===DONE===
 
 2. Map
@@ -53,10 +55,10 @@ Quest (Dimas)
 
 5. Enemy 
 • Musuh minimal terdiri dari 3 jenis, yaitu slime, goblin, dan wolf.  ===DONE===
-• Tiap musuh memiliki status level, HP, Attack, dan Defense sendiri. Sistem status musuh yang muncul dibebaskan.
+• Tiap musuh memiliki status level, HP, Attack, dan Defense sendiri. Sistem status musuh yang muncul dibebaskan. ===DONE===
 • Terdapat juga boss musuh yang harus dikalahkan untuk memenangkan game. 
-    - Boss tersebut berada di boss dungeon yang terletak di suatu tiles di map. 
-    - Boss memiliki status yang sama sepanjang permainan (semisal level 70, attack 1000, dan defense 1000).
+    - Boss tersebut berada di boss dungeon yang terletak di suatu tiles di map. ===DONE===
+    - Boss memiliki status yang sama sepanjang permainan (semisal level 70, attack 1000, dan defense 1000). ===DONE===
 
 6. Quest
 • Quest merupakan misi yang harus diselesaikan oleh pemain, dan diambil dari tempat pengambilan Quest.  ===DONE===
@@ -68,25 +70,25 @@ Quest (Dimas)
 7. Exploration Mechanism
 • Dapat berpindah sebanyak 1 tile pada peta dengan arah atas, bawah, kiri, dan kanan. ===DONE===
 • Dapat melakukan gacha dan membeli potion di store. ===DONE===
-• Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact
-• Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. 
+• Jika pemain berada pada lokasi yang unik, pemain dapat melakukan interact ===DONE===
+• Jika pemain mencapai tile boss, pemain akan otomatis melawan boss. ===DONE===
 • Pada saat berada di field ===DONE===
     - Dapat mengakses inventory untuk memakai items yang terdapat pada inventory. ===DONE===
     - Dapat melihat status pemain saat berada pada field. ===DONE===
 • Pada saat berpindah
-    - Pemain memiliki peluang khusus untuk bertemu dengan enemy. 
-    - Ketika bertemu musuh, ditampilkan jenis enemy, serta status dari enemy tersebut. 
-    - Setelah itu pemain akan memasuki Battle Mechanism (Selengkapnya baca section Battle Mechanism).
+    - Pemain memiliki peluang khusus untuk bertemu dengan enemy. ===DONE===
+    - Ketika bertemu musuh, ditampilkan jenis enemy, serta status dari enemy tersebut. ===DONE===
+    - Setelah itu pemain akan memasuki Battle Mechanism (Selengkapnya baca section Battle Mechanism). ===DONE===
 
 8. Battle Mechanism
-• Setelah bertemu dengan musuh, pemain akan memasuki tampilan bertarung. 
-• Pada tampilan ini, pemain dapat melakukan attack, special attack, use potions, atau run. 
-• Saat melakukan attack dan special attack, 
-    - Pemain akan mengurangi HP musuh. 
-    - Special attack dapat digunakan setiap 3 turn sekali. 
+• Setelah bertemu dengan musuh, pemain akan memasuki tampilan bertarung. ===DONE===
+• Pada tampilan ini, pemain dapat melakukan attack, special attack, use potions, atau run. ===DONE===
+• Saat melakukan attack dan special attack, ===DONE===
+    - Pemain akan mengurangi HP musuh. ===DONE===
+    - Special attack dapat digunakan setiap 3 turn sekali. ===DONE===
 • Use potions akan memakai potion yang terdapat pada inventory. ===DONE===
-• Jika tidak terdapat potion, akan mengulang turn untuk melakukan attack, special attack, atau run. Saat melakukan run, terdapat kemungkinan run gagal, kemudian turn berpindah ke musuh.
-• Saat turn musuh, musuh dapat melakukan special attack atau attack. Sistem turn musuh dibebaskan implementasinya.
+• Jika tidak terdapat potion, akan mengulang turn untuk melakukan attack, special attack, atau run. Saat melakukan run, terdapat kemungkinan run gagal, kemudian turn berpindah ke musuh. ===DONE===
+• Saat turn musuh, musuh dapat melakukan special attack atau attack. Sistem turn musuh dibebaskan implementasinya. ===DONE===
 
 9. Store
 • Pemain dapat mendapatkan equipment di Store dengan menggunakan gold, namun equipment ini didapatkan dengan sistem gacha/lootbox. ===DONE===
@@ -94,14 +96,14 @@ Quest (Dimas)
 • Potion dapat dibeli secara langsung di Store tanpa perlu menggunakan sistem gacha. ===DONE===
 
 10. Fail State
-• Pemain dinyatakan kalah apabila HP pemain menyentuh angka 0. 
+• Pemain dinyatakan kalah apabila HP pemain menyentuh angka 0. ===DONE===
 
 11. Goal State
-• Pemain dinyatakan menang apabila telah berhasil mengalahkan Boss Akhir (Naga) pada Boss Dungeon.
+• Pemain dinyatakan menang apabila telah berhasil mengalahkan Boss Akhir (Naga) pada Boss Dungeon. ===DONE===
 
 12. Bonus
 • Fungsionalitas tambahan berupa potion untuk menambahkan efek seperti serangan dan defense tanpa mengurangi spek wajib.
 • Membuat sistem zona kemunculan monster (zona 1 slime, zona 2 wolf, dll).
 • Terdapat sistem teleport untuk pergi ke titik tertentu.
 • Mengimplementasikan fungsionalitas save dan load untuk menyimpan state permainan saat ini dan memainkannya lain waktu.
-• Kreativitas tambahan dalam implementasi game (contoh: alur cerita, animasi dalam battle mechanism)
+• Kreativitas tambahan dalam implementasi game (contoh: alur cerita, animasi dalam battle mechanism) ===DONE===
