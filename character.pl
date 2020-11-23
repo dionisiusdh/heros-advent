@@ -54,7 +54,7 @@ level_stat(30, 2900).
 level_stat(31, 3000).
 
 % Attack (Job, Value)
-attack_stat(1, 10000).
+attack_stat(1, 70).
 attack_stat(2, 60).
 attack_stat(3, 90).
 
