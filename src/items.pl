@@ -59,7 +59,7 @@ item_equipable(6, 3).
 item_equipable(7, 1).
 item_equipable(8, 2).
 item_equipable(9, 3).
-item_equipable(19, 1).
+item_equipable(10, 1).
 item_equipable(11, 2).
 item_equipable(12, 3).
 item_equipable(13, 1).

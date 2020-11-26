@@ -69,7 +69,6 @@ print_n(N) :-
     ;
         write('')).
 
-
 % Print list
 print_list(I) :- 
     cinventory(_, Total),

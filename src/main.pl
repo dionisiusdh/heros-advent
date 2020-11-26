@@ -71,7 +71,7 @@ start :-
     !,
     asserta(start_flag(true)),
 
-    write('Welcome to blabla. Choose your job'),nl,
+    write('Welcome to the world of Hero\'s Advent! Choose your job'),nl,
     write('1. Swordsman'),nl,
     write('2. Archer'),nl,
     write('3. Sorcerer'),nl,
