@@ -1,16 +1,14 @@
-# Tugas Besar IF2121 - Logika Komputasional
-![](https://img.shields.io/badge/GNU%20Prolog-1.4.5%20-blue)
-
 # Hero's Advent
 > Survival Role Playing Game
 
-### Kelompok 4 - KepalaPundakLututKaki - Kelas 2
-| Anggota | NIM |
-| --- | --- |
-|Dionisius Darryl H. | 13519058 |	
-|James Chandra  | 13519078 |
-|Jordan Daniel J. | 13519098 |
-|Gregorius Dimas B. | 13519190 |
+![](https://img.shields.io/badge/GNU%20Prolog-1.4.5%20-blue)
+
+| Made by |
+| --- |
+|Dionisius Darryl H. |	
+|James Chandra  |
+|Jordan Daniel J. |
+|Gregorius Dimas B. |
          
 ## Table of contents
 * [General info](#general-info)
@@ -19,7 +17,7 @@
 * [Setup](#setup)
 
 ## General info
-Sebuah *survival role-playing* game yang dibuat dengan menggunakan bahasa pemrograman deklaratif Prolog.
+A survival role-playing game made declaratively with Prolog
 
 ## Screenshots
 ![](./img/pic1.png)
@@ -28,10 +26,9 @@ Sebuah *survival role-playing* game yang dibuat dengan menggunakan bahasa pemrog
 * GNU Prolog 1.4.5
 
 ## Setup
-1. Pastikan ```GNU Prolog``` telah terinstall
-2. Clone repository ini pada local computer anda
-3. Masuk ke dalam folder hasil clone repository
-4. Jalankan ```main.pl```
-5. Masukkan ```start.``` untuk memulai permainan.
+1. Make sure that you have ```GNU Prolog``` installed
+2. Clone this repository in your local computer
+3. Execute ```main.pl```
+4. Type ```start.``` to start the game
 
 ## Thank you
